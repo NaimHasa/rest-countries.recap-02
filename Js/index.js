@@ -11,8 +11,26 @@ const displayData = countries => {
     allCountries.innerHTML = allCountriesHTML.join('');
 
 }
-const getCountryHTML = country => {
 
+/// Steps Number 03
+const getCountryHTML = ({ name, flags, area }) => {
+
+    return country = `
+    <div class = "country">
+        <h2>Name: ${name.common}</h2>
+        <p>Area: ${area}</p>
+          <img src= "${flags.png}">
+           </div>
+
+`;
+
+}
+
+/*
+
+Original steps  01
+
+const getCountryHTML = country => {
     return country = `
 <div class = "country">
 <h2>${country.name.common}</h2>
@@ -22,6 +40,23 @@ const getCountryHTML = country => {
 `;
 
 }
+
+
+*/
+/*const getCountryHTML = country => {
+    //   2 setps for destructing  
+    const { name, flags } = country;
+
+    return country = `
+<div class = "country">
+<h2>${name.common}</h2>
+ <img src= "${flags.png}">
+</div>
+
+`;
+
+}
+*/
 
 loadCountriesData();
 
